@@ -23,12 +23,12 @@ class AlertExtension extends Extension
         $option = $this->processConfiguration(new Configuration(), $configs);
 
         $container->setParameter('sesame_jizo_alert.db.driver', $option['driver']);
-        $container->setParameter('sesame_jizo_alert.db.host', $option['host']);
-        $container->setParameter('sesame_jizo_alert.db.port', $option['port']);
-        $container->setParameter('sesame_jizo_alert.db.user', $option['user']);
+        $container->setParameter('sesame_jizo_alert.db.host',   $option['host']);
+        $container->setParameter('sesame_jizo_alert.db.port',   $option['port']);
+        $container->setParameter('sesame_jizo_alert.db.user',   $option['user']);
         $container->setParameter('sesame_jizo_alert.db.password', $option['password']);
-        $container->setParameter('sesame_jizo_alert.db.name', $option['db_name']);
-        $container->setParameter('sesame_jizo_alert.db.charset', $option['charset']);
+        $container->setParameter('sesame_jizo_alert.db.name',   $option['db_name']);
+        $container->setParameter('sesame_jizo_alert.db.charset',$option['charset']);
         $container->setParameter('sesame_jizo_alert.db.is_dev_mode', $option['is_dev_mode']);
         //$alertDefinition = $container->getDefinition('sesame.jizo.alert.db_conf');
         //$alertDefinition->replaceArgument(0, $option['api_key']);
