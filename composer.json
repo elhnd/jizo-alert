@@ -1,0 +1,24 @@
+{
+    "name": "sesame/jizo-alerts",
+    "description": "Package for alerts in Jizo",
+    "type": "symfony-bundle",
+    "autoload": {
+        "psr-4": {
+            "Sesame\\Bundle\\JizoAlerts\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "sesame",
+            "email": "sesame@sesame-it.fr"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require-dev": {
+        "symfony/dependency-injection": "^6.4",
+        "symfony/config": "^6.4",
+        "symfony/yaml": "^6.4",
+        "symfony/http-kernel": "^6.4",
+        "symfony/orm-pack": "*"
+    }
+}

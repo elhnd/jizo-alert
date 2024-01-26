@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="sesame.jizo.alert.db_conf" class="Sesame\Bundle\JizoAlerts\Doctrine\DatabaseConfiguration" public="true">
+            <argument type="string">%sesame_jizo_alert.db.driver%</argument>
+            <argument type="string">%sesame_jizo_alert.db.host%</argument>
+            <argument type="string">%sesame_jizo_alert.db.port%</argument>
+            <argument type="string">%sesame_jizo_alert.db.user%</argument>
+            <argument type="string">%sesame_jizo_alert.db.password%</argument>
+            <argument type="string">%sesame_jizo_alert.db.name%</argument>
+            <argument type="string">%sesame_jizo_alert.db.charset%</argument>
+            <argument type="string">%sesame_jizo_alert.db.is_dev_mode%</argument>
+        </service>
+
+        <service id="sesame.jizo.alerts" class="Sesame\Bundle\JizoAlerts\Alerts" public="true">
+            <argument type="service" id="sesame.jizo.alert.db_conf" />
+        </service>
+
+        <!-- <service id="Leuz\JitsiBundle\JitsiInterface" alias="jitsi" public="true" /> -->
+    </services>
+</container>
+
+        <!-- <argument type="string">%lexik_jwt_authentication.encoder.signature_algorithm%</argument> 
+
+        <service id="lexik_jwt_authentication.jwt_manager" class="Lexik\Bundle\JWTAuthenticationBundle\Services\JWTManager" public="true">
+            <argument type="service" id="lexik_jwt_authentication.encoder"/>
+            <argument type="service" id="event_dispatcher"/>
+            <argument>%lexik_jwt_authentication.user_id_claim%</argument>
+            <call method="setUserIdentityField">
+                <argument>%lexik_jwt_authentication.user_identity_field%</argument>
+                <argument>false</argument>
+            </call>
+        </service>
+
+        <service id="lexik_jwt_authentication.jwt_manager" class="Lexik\Bundle\JWTAuthenticationBundle\Services\JWTManager" public="true">
+            <argument type="service" id="lexik_jwt_authentication.encoder"/>
+            <argument type="service" id="event_dispatcher"/>
+            <argument>%lexik_jwt_authentication.user_id_claim%</argument>
+            <call method="setUserIdentityField">
+                <argument>%lexik_jwt_authentication.user_identity_field%</argument>
+                <argument>false</argument>
+            </call>
+        </service> -->
