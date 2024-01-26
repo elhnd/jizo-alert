@@ -19,29 +19,5 @@
         <service id="sesame.jizo.alerts" class="Sesame\Bundle\JizoAlerts\Alerts" public="true">
             <argument type="service" id="sesame.jizo.alert.db_conf" />
         </service>
-
-        <!-- <service id="Leuz\JitsiBundle\JitsiInterface" alias="jitsi" public="true" /> -->
     </services>
 </container>
-
-        <!-- <argument type="string">%lexik_jwt_authentication.encoder.signature_algorithm%</argument> 
-
-        <service id="lexik_jwt_authentication.jwt_manager" class="Lexik\Bundle\JWTAuthenticationBundle\Services\JWTManager" public="true">
-            <argument type="service" id="lexik_jwt_authentication.encoder"/>
-            <argument type="service" id="event_dispatcher"/>
-            <argument>%lexik_jwt_authentication.user_id_claim%</argument>
-            <call method="setUserIdentityField">
-                <argument>%lexik_jwt_authentication.user_identity_field%</argument>
-                <argument>false</argument>
-            </call>
-        </service>
-
-        <service id="lexik_jwt_authentication.jwt_manager" class="Lexik\Bundle\JWTAuthenticationBundle\Services\JWTManager" public="true">
-            <argument type="service" id="lexik_jwt_authentication.encoder"/>
-            <argument type="service" id="event_dispatcher"/>
-            <argument>%lexik_jwt_authentication.user_id_claim%</argument>
-            <call method="setUserIdentityField">
-                <argument>%lexik_jwt_authentication.user_identity_field%</argument>
-                <argument>false</argument>
-            </call>
-        </service> -->

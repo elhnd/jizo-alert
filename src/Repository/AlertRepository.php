@@ -7,7 +7,6 @@ use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\ORM\NoResultException;
 use Doctrine\ORM\Query\ResultSetMappingBuilder;
-use Doctrine\Persistence\ManagerRegistry;
 use Sesame\Bundle\JizoAlerts\Entity\Alert;
 
 /**
