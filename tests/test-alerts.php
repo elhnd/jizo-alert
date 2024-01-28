@@ -13,5 +13,5 @@ $extension->load($configs, $container);
 $container->compile();
 
 $alertService = $container->get('sesame.jizo.alerts');
-$alerts = $alertService->alerts();
+$alerts = $alertService->getAllAlerts();
 var_dump($alerts);

@@ -19,5 +19,7 @@
         <service id="sesame.jizo.alerts" class="Sesame\Bundle\JizoAlerts\Alerts" public="true">
             <argument type="service" id="sesame.jizo.alert.db_conf" />
         </service>
+
+        <service id="Sesame\Bundle\JizoAlerts\AlertsInterface" alias="sesame.jizo.alerts" />
     </services>
 </container>

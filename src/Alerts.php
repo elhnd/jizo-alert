@@ -7,7 +7,7 @@ use Sesame\Bundle\JizoAlerts\Doctrine\DatabaseConfiguration;
 use Sesame\Bundle\JizoAlerts\Entity\Alert;
 use Sesame\Bundle\JizoAlerts\Repository\AlertRepository;
 
-class Alerts
+class Alerts implements AlertsInterface
 {
     private AlertRepository $alertRepository;
     private EntityManager   $em;
@@ -18,7 +18,10 @@ class Alerts
         $this->alertRepository = $this->em->getRepository(Alert::class);
     }
 
-    public function alerts()
+    /**
+    * @return Alert[].
+    */
+    public function getAllAlerts(): array
     {
         return $this->alertRepository->findAll();
     }
