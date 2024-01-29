@@ -1,4 +1,5 @@
 <?php
+
 namespace Sesame\Bundle\JizoAlerts\DTO;
 readonly class AlertDto
 {
