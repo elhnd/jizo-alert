@@ -35,7 +35,7 @@ class Configuration implements ConfigurationInterface
                     ->defaultValue('utf8mb4')
                 ->end()
                 ->scalarNode('is_dev_mode')
-                    ->defaultValue(false)
+                    ->defaultValue(true)
                 ->end()
             ->end();
         return $treeBuilder;
