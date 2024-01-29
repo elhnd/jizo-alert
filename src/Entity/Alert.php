@@ -11,35 +11,86 @@ class Alert implements JsonSerializable
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column(type:"integer")]
+    #[ORM\Column(type:"integer", name: "Idx")]
     private $idx;
 
+    #[ORM\Column(type:"string", name: "RuleSidRev")]
     private $sidRev;
+
+    #[ORM\Column(type:"string", name: "Content")]
     private $content;
+
+    #[ORM\Column(type:"string", name: "Sid")]
     private $sid;
+
+    #[ORM\Column(type:"string", name: "Rev")]
     private $rev;
+
+    #[ORM\Column(type:"string", name: "Signature")]
     private $signature;
+
+    #[ORM\Column(type:"string", name: "Category")]
     private $category;
+
+    #[ORM\Column(type:"integer", name: "Severity")]
     private $severity;
+
+    #[ORM\Column(type:"integer", name: "FlowId")]
     private $flowId;
+
+    #[ORM\Column(type:"integer", name: "SrcIp")]
     private $srcIp;
+
+    #[ORM\Column(type:"string", name: "SrcPort")]
     private $srcPort;
+
+    #[ORM\Column(type:"string", name: "DestIp")]
     private $destIp;
+
+    #[ORM\Column(type:"integer", name: "DestPort")]
     private $destPort;
-    private $protocol;
+
+    #[ORM\Column(type:"string", name: "Proto")]
+    private $proto;
+
+    #[ORM\Column(type:"string", name: "AppProto")]
     private $appProto;
+
+    #[ORM\Column(type:"string", name: "Payload")]
     private $payload;
+
+    #[ORM\Column(type:"string", name: "PayloadPrintable")]
     private $payloadPrintable;
+
+    #[ORM\Column(type:"string", name: "Packet")]
     private $packet;
+
+    #[ORM\Column(type:"string", name: "FlowBits")]
     private $flowbits;
+
+    #[ORM\Column(type:"string", name: "DateTime")]
     private $dateTime;
+
     private $occurence;
+
+    #[ORM\Column(type:"integer", name: "State")]
     private $state;
+
+    #[ORM\Column(type:"string", name: "Comment")]
     private $comment;
+
+    #[ORM\Column(type:"integer", name: "AlertCategory")]
     private $alertCategory;
+
+    #[ORM\Column(type:"integer", name: "InvestigationConclusion")]
     private $investigationConclusion;
+
+    #[ORM\Column(type:"integer", name: "Behaviour")]
     private $behaviour;
+
+    #[ORM\Column(type:"integer", name: "VlanId")]
     private $vlanId;
+
     private $metadata;
 
     public static function create() : Alert {
@@ -283,18 +334,18 @@ class Alert implements JsonSerializable
     /**
      * @return mixed
      */
-    public function getProtocol()
+    public function getproto()
     {
-        return $this->protocol;
+        return $this->proto;
     }
 
     /**
-     * @param mixed $protocol
+     * @param mixed $proto
      * @return Alert
      */
-    public function setProtocol($protocol)
+    public function setproto($proto)
     {
-        $this->protocol = $protocol;
+        $this->proto = $proto;
         return $this;
     }
 
@@ -343,7 +394,7 @@ class Alert implements JsonSerializable
     }
 
     /**
-     * @param mixed $protocolPrintable
+     * @param mixed $protoPrintable
      * @return Alert
      */
     public function setPayloadPrintable($payloadPrintable)
@@ -566,7 +617,7 @@ class Alert implements JsonSerializable
             'srcPort' => $this->srcPort,
             'destIp' => $this->destIp,
             'destPort' => $this->destPort,
-            'protocol' => $this->protocol,
+            'proto' => $this->proto,
             'appProto' => $this->appProto,
             'payload' => $this->payload,
             'payloadPrintable' => $this->payloadPrintable,

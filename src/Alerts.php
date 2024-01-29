@@ -4,6 +4,7 @@ namespace Sesame\Bundle\JizoAlerts;
 
 use Doctrine\ORM\EntityManager;
 use Sesame\Bundle\JizoAlerts\Doctrine\DatabaseConfiguration;
+use Sesame\Bundle\JizoAlerts\DTO\AlertDto;
 use Sesame\Bundle\JizoAlerts\Entity\Alert;
 use Sesame\Bundle\JizoAlerts\Repository\AlertRepository;
 
@@ -24,6 +25,11 @@ class Alerts implements AlertsInterface
     public function getAllAlerts(): array
     {
         return $this->alertRepository->findAll();
+    }
+
+    public function getAlert(AlertDto $alertDto)
+    {
+        return $this->alertRepository->getAlert($alertDto);
     }
 
 }
