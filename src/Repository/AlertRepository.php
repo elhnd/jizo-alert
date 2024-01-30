@@ -7,7 +7,7 @@ use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\ORM\NoResultException;
 use Doctrine\ORM\Query\ResultSetMappingBuilder;
-use Sesame\Bundle\JizoAlerts\DTO\AlertDto;
+use Sesame\Bundle\JizoAlerts\Dto\AlertDto;
 use Sesame\Bundle\JizoAlerts\Entity\Alert;
 
 /**
@@ -25,12 +25,12 @@ class AlertRepository extends EntityRepository
         parent::__construct($entityManager, $entityManager->getClassMetadata(Alert::class));
     }
 
-    public function getAlert(AlertDto $alertDto)
+    public function getAlert(AlertDto $alertDto): array
     {
         $rsm = new ResultSetMappingBuilder($this->entityManager);
         $rsm->addRootEntityFromClassMetadata(Alert::class, 'a');
-        
-        $query = $this->entityManager->createNativeQuery(Procedure::GET_OCCURENCES, $rsm);
+
+        $query = $this->entityManager->createNativeQuery(AlertProcedures::GET_OCCURENCES, $rsm);
 
         foreach (get_object_vars($alertDto) as $param => $value) {
             $param = strtolower(preg_replace('/(?<!^)[A-Z]/', '_$0', $param));
@@ -45,4 +45,3 @@ class AlertRepository extends EntityRepository
         }
     }
 }
-

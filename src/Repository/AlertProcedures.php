@@ -1,7 +1,7 @@
 <?php
 namespace Sesame\Bundle\JizoAlerts\Repository;
 
-class Procedure {
+class AlertProcedures {
     const GET_OCCURENCES = 
         'CALL getOccurences(
             :rule_sid_rev,
