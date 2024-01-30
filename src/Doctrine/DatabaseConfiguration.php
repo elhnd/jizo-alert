@@ -18,19 +18,19 @@ class DatabaseConfiguration
         private string $password,
         private string $dbname,
         private string $charset,
-        private bool $isDevMode
+        private bool   $isDevMode
     )
     {
         $config = ORMSetup::createAttributeMetadataConfiguration([__DIR__.'/src/Entity'], $isDevMode);
 
         $connection = DriverManager::getConnection([
-            'driver' => $driver,
-            'host' => $host,
-            'port' => $port,
-            'user' => $user,
-            'password' => $password,
-            'dbname' => $dbname,
-            'charset' => $charset
+            'driver'    => $driver,
+            'host'      => $host,
+            'port'      => $port,
+            'user'      => $user,
+            'password'  => $password,
+            'dbname'    => $dbname,
+            'charset'   => $charset
         ], $config);
 
         $this->entityManager = new EntityManager($connection, $config);
