@@ -1,6 +1,6 @@
 <?php
 
-namespace Sesame\Bundle\JizoAlerts\DTO;
+namespace Sesame\Bundle\JizoAlert\DTO;
 
 readonly class AlertDto
 {

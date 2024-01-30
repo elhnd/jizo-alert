@@ -2,9 +2,10 @@
     "name": "sesame/jizo-alerts",
     "description": "Package for alerts in Jizo",
     "type": "symfony-bundle",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Sesame\\Bundle\\JizoAlerts\\": "src/"
+            "Sesame\\Bundle\\JizoAlert\\": "src/"
         }
     },
     "authors": [
@@ -20,5 +21,10 @@
         "symfony/yaml": "^6.4",
         "symfony/http-kernel": "^6.4",
         "symfony/orm-pack": "*"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "alert-cmd"
+        }
     }
 }

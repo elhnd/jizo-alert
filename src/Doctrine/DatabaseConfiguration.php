@@ -1,6 +1,6 @@
 <?php
 
-namespace Sesame\Bundle\JizoAlerts\Doctrine;
+namespace Sesame\Bundle\JizoAlert\Doctrine;
 
 use Doctrine\DBAL\DriverManager;
 use Doctrine\ORM\EntityManager;

@@ -1,14 +1,14 @@
 <?php
 
-namespace Sesame\Bundle\JizoAlerts;
+namespace Sesame\Bundle\JizoAlert;
 
 use Doctrine\ORM\EntityManager;
-use Sesame\Bundle\JizoAlerts\Doctrine\DatabaseConfiguration;
-use Sesame\Bundle\JizoAlerts\DTO\AlertDto;
-use Sesame\Bundle\JizoAlerts\Entity\Alert;
-use Sesame\Bundle\JizoAlerts\Repository\AlertRepository;
+use Sesame\Bundle\JizoAlert\Doctrine\DatabaseConfiguration;
+use Sesame\Bundle\JizoAlert\DTO\AlertDto;
+use Sesame\Bundle\JizoAlert\Entity\Alert as AlertEntity;
+use Sesame\Bundle\JizoAlert\Repository\AlertRepository;
 
-class Alerts implements AlertsInterface
+class Alert implements AlertInterface
 {
     private AlertRepository $alertRepository;
     private EntityManager   $em;
@@ -16,11 +16,11 @@ class Alerts implements AlertsInterface
     public function __construct(private DatabaseConfiguration $dbConfig)
     {
         $this->em = $dbConfig->getEntityManager();
-        $this->alertRepository = $this->em->getRepository(Alert::class);
+        $this->alertRepository = $this->em->getRepository(AlertEntity::class);
     }
 
     /**
-    * @return Alert[].
+    * @return AlertEntity[].
     */
     public function getAllAlerts(): array
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Sesame\Bundle\JizoAlerts\DependencyInjection;
+namespace Sesame\Bundle\JizoAlert\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;

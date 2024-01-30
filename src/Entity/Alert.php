@@ -1,11 +1,11 @@
 <?php
 
-namespace Sesame\Bundle\JizoAlerts\Entity;
+namespace Sesame\Bundle\JizoAlert\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 use JsonSerializable;
 
-#[ORM\Entity(repositoryClass:"Sesame\Bundle\JizoAlerts\Repository\AlertRepository")]
+#[ORM\Entity(repositoryClass:"Sesame\Bundle\JizoAlert\Repository\AlertRepository")]
 #[ORM\Table(name:"AlertPusherBody")]
 class Alert implements JsonSerializable 
 {
