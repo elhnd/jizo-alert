@@ -1,8 +1,8 @@
 
 <?php
 
-use Sesame\Bundle\JizoAlerts\DependencyInjection\AlertExtension;
-use Sesame\Bundle\JizoAlerts\Dto\AlertDto;
+use Sesame\Bundle\JizoAlert\DependencyInjection\AlertExtension;
+use Sesame\Bundle\JizoAlert\Dto\AlertDto;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 require_once __DIR__ . '/../vendor/autoload.php';
 
@@ -15,6 +15,6 @@ $container->compile();
 
 // DateTime::createFromFormat('Y-m-d-H-i-s', '2000-01-22 12-06');
 $alertDto = new AlertDto(dateTimeFrom:'2000-01-22-12-06-21(String)', dateTimeTo:'2024-01-29-12-06-21(String)', limit: 1);
-$alertService = $container->get('sesame.jizo.alerts');
+$alertService = $container->get('sesame.jizo.alert');
 $alerts = $alertService->getAlert($alertDto);
 var_dump(json_encode($alerts));

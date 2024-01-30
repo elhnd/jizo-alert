@@ -1,5 +1,5 @@
 <?php
-namespace Sesame\Bundle\JizoAlerts\Repository;
+namespace Sesame\Bundle\JizoAlert\Repository;
 
 class AlertProcedures {
     const GET_OCCURENCES = 

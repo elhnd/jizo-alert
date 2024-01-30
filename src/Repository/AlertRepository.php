@@ -1,14 +1,14 @@
 <?php
 
-namespace Sesame\Bundle\JizoAlerts\Repository;
+namespace Sesame\Bundle\JizoAlert\Repository;
 
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\ORM\NoResultException;
 use Doctrine\ORM\Query\ResultSetMappingBuilder;
-use Sesame\Bundle\JizoAlerts\Dto\AlertDto;
-use Sesame\Bundle\JizoAlerts\Entity\Alert;
+use Sesame\Bundle\JizoAlert\Dto\AlertDto;
+use Sesame\Bundle\JizoAlert\Entity\Alert;
 
 /**
  * @extends EntityRepository<Alert>
