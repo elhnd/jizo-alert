@@ -5,7 +5,7 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <service id="sesame.jizo.alert.db_conf" class="Sesame\Bundle\JizoAlert\Doctrine\DatabaseConfiguration" public="true">
+        <service id="sesame.jizo.alert.db_conf" class="Sesame\Bundle\JizoAlert\Doctrine\DatabaseConfiguration">
             <argument type="string">%sesame_jizo_alert.db.driver%</argument>
             <argument type="string">%sesame_jizo_alert.db.host%</argument>
             <argument type="string">%sesame_jizo_alert.db.port%</argument>
@@ -20,9 +20,9 @@
             <argument type="service" id="sesame.jizo.alert.db_conf" />
         </service>
 
-        <service id="Sesame\Bundle\JizoAlert\AlertInterface" alias="sesame.jizo.alert" public="true" />
+        <service id="Sesame\Bundle\JizoAlert\AlertInterface" alias="sesame.jizo.alert"/>
 
-        <service id="sesame.jizo.alert.commmand.controller" class="Sesame\Bundle\JizoAlert\Command\AlertCommand" public="true">
+        <service id="sesame.jizo.alert.commmand.controller" class="Sesame\Bundle\JizoAlert\Command\AlertCommand">
             <tag name="console.command" command="jizo:alert-controller" />
         </service>
     </services>

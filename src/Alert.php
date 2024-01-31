@@ -19,17 +19,14 @@ class Alert implements AlertInterface
         $this->alertRepository = $this->em->getRepository(AlertEntity::class);
     }
 
-    /**
-    * @return AlertEntity[].
-    */
     public function getAllAlerts(): array
     {
         return $this->alertRepository->findAll();
     }
 
-    public function getAlert(AlertDto $alertDto)
+    public function getAlerts(AlertDto $alertDto): array
     {
-        return $this->alertRepository->getAlert($alertDto);
+        return $this->alertRepository->getAlerts($alertDto);
     }
 
 }

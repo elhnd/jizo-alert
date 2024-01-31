@@ -10,14 +10,6 @@ use Doctrine\ORM\Query\ResultSetMappingBuilder;
 use Sesame\Bundle\JizoAlert\Dto\AlertDto;
 use Sesame\Bundle\JizoAlert\Entity\Alert;
 
-/**
- * @extends EntityRepository<Alert>
- *
- * @method Alert|null find($id, $lockMode = null, $lockVersion = null)
- * @method Alert|null findOneBy(array $criteria, array $orderBy = null)
- * @method Alert[]    findAll()
- * @method Alert[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
- */
 class AlertRepository extends EntityRepository
 {
     public function __construct(private EntityManager $entityManager)
@@ -25,7 +17,7 @@ class AlertRepository extends EntityRepository
         parent::__construct($entityManager, $entityManager->getClassMetadata(Alert::class));
     }
 
-    public function getAlert(AlertDto $alertDto): array
+    public function getAlerts(AlertDto $alertDto): array
     {
         $rsm = new ResultSetMappingBuilder($this->entityManager);
         $rsm->addRootEntityFromClassMetadata(Alert::class, 'a');

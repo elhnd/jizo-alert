@@ -1,6 +1,6 @@
 <?php
 
-namespace Sesame\Bundle\JizoAlert\DTO;
+namespace Sesame\Bundle\JizoAlert\Dto;
 
 readonly class AlertDto
 {
@@ -25,6 +25,6 @@ readonly class AlertDto
         public ?string $sidExcluded = null,
         public ?string $vlanId = null,
         public ?int    $offset = null,
-        public ?int    $limit = null
+        public ?int    $limit = 50
     ){}
 }
