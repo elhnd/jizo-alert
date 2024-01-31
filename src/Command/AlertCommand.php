@@ -39,15 +39,21 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class AlertController extends AbstractController
 {
-    #[Route('/alerts', name: 'alerts')]
-    public function getAlerts(AlertInterface \$alert): Response
+
+    public function __construct(private AlertInterface \$alert)
     {
-        return \$this->json(\$alert->getAlerts(new AlertDto()));
+
     }
 
-    public function tesAlerts(AlertInterface \$alert) 
+    #[Route('/alerts', name: 'alerts')]
+    public function getAlerts(): Response
     {
-        return \$this->json(\$alert->getAllAlerts());
+        return \$this->json(\$this->alert->getAlerts(new AlertDto()));
+    }
+
+    public function tesAlerts() 
+    {
+        return \$this->json(\$this->alert->getAllAlerts());
     }
 }
 JIZO;
