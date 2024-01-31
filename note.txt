@@ -1,0 +1,1 @@
+CALL getOccurences(null, null, null, null,'2024-01-22-16-16-36', '2024-01-29-16-16-36', null, null, null, null, null,null, null, null, null, null, null, null, null, 0, 50)
