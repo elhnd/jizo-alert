@@ -14,7 +14,7 @@ $extension->load($configs, $container);
 $container->compile();
 
 // DateTime::createFromFormat('Y-m-d-H-i-s', '2000-01-22 12-06');
-$alertDto = new AlertDto(dateTimeFrom:'2000-01-22-12-06-21(String)', dateTimeTo:'2024-01-29-12-06-21(String)', limit: 1);
+$alertDto = new AlertDto(dateTimeFrom:'2000-01-22-12-06-21', dateTimeTo:'2024-01-29-12-06-21', limit: 1);
 $alertService = $container->get('sesame.jizo.alert');
-$alerts = $alertService->getAlert($alertDto);
+$alerts = $alertService->getAlerts($alertDto);
 var_dump(json_encode($alerts));

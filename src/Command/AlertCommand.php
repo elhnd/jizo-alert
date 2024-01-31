@@ -15,7 +15,7 @@ class AlertCommand extends Command
 {
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $alertControllerContent = $this->getControllerTemplate();
+        $alertControllerContent = $this->getAlertControllerTemplate();
 
         file_put_contents('./src/Controller/AlertController.php', $alertControllerContent);
 
@@ -24,7 +24,7 @@ class AlertCommand extends Command
         return Command::SUCCESS;
     }
 
-    private function getControllerTemplate(): string
+    private function getAlertControllerTemplate(): string
     {
         return <<<JIZO
 <?php
@@ -34,7 +34,7 @@ namespace App\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Sesame\Bundle\JizoAlert\AlertInterface;
-use Sesame\Bundle\JizoAlert\Dto\AlertDTO;
+use Sesame\Bundle\JizoAlert\Dto\AlertDto;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class AlertController extends AbstractController
@@ -43,6 +43,11 @@ class AlertController extends AbstractController
     public function getAlerts(AlertInterface \$alert): Response
     {
         return \$this->json(\$alert->getAlerts(new AlertDto()));
+    }
+
+    public function tesAlerts(AlertInterface \$alert) 
+    {
+        return \$this->json(\$alert->getAllAlerts());
     }
 }
 JIZO;
